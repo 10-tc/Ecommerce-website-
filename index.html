@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Products</h1>
+    <form action="{{ url_for('search') }}" method="get">
+        <input type="text" name="query" placeholder="Search product...">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for product in product %}
+        <li>
+            <a href="{{ url_for('product', product_id=product[0]) }}">{{ product[1] }}</a>
+            - ${{ product[3] }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
