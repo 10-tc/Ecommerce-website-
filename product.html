@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product[1] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>{{ product[1] }}</h1>
+    <p>{{ product[2] }}</p>
+    <p>Price: ${{ product[3] }}</p>
+    <a href="{{ url_for('add_to_cart', product_id=product[0]) }}">Add to Cart</a>
+</body>
+</html>
